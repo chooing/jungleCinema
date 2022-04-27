@@ -1,0 +1,74 @@
+$sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
+
+.footer{
+    padding: 54px 0 38px;
+    background-color: $gray6;
+    font-size: nth($fontSizes, 3);
+    color: $gray2;
+
+    .logo{
+        display: inline-block;
+        width: 147.5px;
+        a{
+            @include displaySize;
+        }
+    }
+
+    .sns-wrap{
+        float: right;
+
+        @each $sns in $sns-images {
+            $i: index($sns-images, $sns);
+            
+            a:nth-child(#{$i}){
+                @include displaySize(inline-block, 24px, 24px);
+                background-image: url($sns);
+                background-repeat: no-repeat;
+                background-size: contain;
+            } 
+            a+a{
+                margin-left: 22px;
+            }  
+        }
+    }
+
+    .info-wrap{
+        border-top: 1px solid $gray5;
+        margin-top: 41px;
+        padding-top: 36px;
+        
+
+        .company-info{
+            display: flex;
+            line-height: 1;
+            // display: inline-block;
+            float: left;
+            dt, dd:nth-of-type(1){font-weight: 700;}
+            dt{
+                padding-left: 8px;
+            }
+            dd{
+                position: relative;
+                margin-left: 4px;
+                padding-right: 8px;
+            }
+            dd::after{
+                content: '';
+                background-color: $gray2;
+                width: 1px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+            dd:last-child:after{
+                display: none;
+            }
+            
+        }
+        .copy-right{
+            float: right;
+            font-weight: 700;
+        }
+    }
+}
