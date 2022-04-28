@@ -66,6 +66,15 @@ img{
     vertical-align: top;
 }
 
+button{
+    border: 0;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    background-color: transparent; 
+    cursor: pointer;   
+}
+
 .tag-hide {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -82,4 +91,10 @@ img{
     line-height: 0;
     font-size: 1px;
     color: transparent;
+}
+
+.clear-fix::after{
+    content: '';
+    display: block;
+    clear: both;
 }

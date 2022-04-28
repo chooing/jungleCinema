@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
 // variables
 $gray2:#4F4F4F;
 $gray3:#828282;
@@ -17,12 +19,13 @@ $fontSizes: 24px 16px 14px 13px;
 
 // layout
 .wrap{
-    width: 1190px;
+    max-width: 1190px;
+    padding: 0 2em;
     margin: 0 auto;
 }
 
-.clear-fix::after{
-    content: '';
-    display: block;
-    clear: both;
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: nth($fontSizes, 3);
 }

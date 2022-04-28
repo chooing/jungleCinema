@@ -3,7 +3,6 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
 .footer{
     padding: 54px 0 38px;
     background-color: $gray6;
-    font-size: nth($fontSizes, 3);
     color: $gray2;
 
     .logo{
@@ -26,31 +25,30 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
                 background-repeat: no-repeat;
                 background-size: contain;
             } 
-            a+a{
-                margin-left: 22px;
-            }  
         }
+        a+a{
+            margin-left: 22px;
+        }  
     }
 
-    .info-wrap{
+    @at-root .info-wrap{
         border-top: 1px solid $gray5;
         margin-top: 41px;
         padding-top: 36px;
         
-
         .company-info{
-            display: flex;
             line-height: 1;
-            // display: inline-block;
             float: left;
             dt, dd:nth-of-type(1){font-weight: 700;}
             dt{
                 padding-left: 8px;
+                float: left;
             }
             dd{
                 position: relative;
                 margin-left: 4px;
                 padding-right: 8px;
+                float: left;
             }
             dd::after{
                 content: '';
