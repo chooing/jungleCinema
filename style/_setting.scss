@@ -1,3 +1,4 @@
+// font
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
 // variables
@@ -9,13 +10,25 @@ $gray6:#F2F2F2;
 
 $fontSizes: 24px 16px 14px 13px;
 
-
 // mixin
-@mixin displaySize($display:block, $width:100%, $height:100%) {
+// 가상요소에 배경이미지 넣기
+@mixin beforeAfter($display, $bgurl, $vertical) {
+    content: '';
     display: $display;
-    width: $width;
-    height: $height;  
+    background-image: url($bgurl);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: $vertical;
 } 
+
+// 한 줄 말줄임
+@mixin ellipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 // layout
 .wrap{

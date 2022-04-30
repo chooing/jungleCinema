@@ -9,7 +9,9 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
         display: inline-block;
         width: 147.5px;
         a{
-            @include displaySize;
+            display: block;
+            width: 100%;
+            height: 100%; 
         }
     }
 
@@ -20,7 +22,9 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
             $i: index($sns-images, $sns);
             
             a:nth-child(#{$i}){
-                @include displaySize(inline-block, 24px, 24px);
+                display: inline-block;
+                width: 24px;
+                height: 24px; 
                 background-image: url($sns);
                 background-repeat: no-repeat;
                 background-size: contain;

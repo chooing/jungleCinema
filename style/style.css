@@ -13,16 +13,19 @@ body {
 }
 
 .container {
-  margin: 86px 65px 135px;
+  max-width: 1060px;
+  margin: 86px auto 135px;
   border: 2px solid #BDBDBD;
   border-radius: 15px;
   padding: 39px 26px 29px;
   background-color: #F2F2F2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header {
-  width: 650px;
-  margin: 0 auto;
+  max-width: 650px;
+  margin: 0 auto 28px;
   text-align: center;
 }
 
@@ -47,6 +50,10 @@ body {
 
 .header .nav button {
   margin: 0 30px;
+}
+
+.header .nav button:hover {
+  font-weight: 900;
 }
 
 .header .nav button.on {
@@ -82,6 +89,10 @@ body {
   font-weight: 900;
   font-size: 16px;
   margin: 11px 0 12px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movie .info {
@@ -100,12 +111,13 @@ body {
 .movie .info .txt.grade::before {
   content: '';
   display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-image: url(../img/star.png);
+  background-image: url("../img/star.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  vertical-align: top;
+  width: 14px;
+  height: 14px;
   margin-right: 4px;
 }
 
@@ -113,6 +125,13 @@ body {
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-column: 2/5;
+}
+
+.movie .info .txt.act {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movie .btn-wrap {
@@ -125,7 +144,7 @@ body {
   width: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 9px 12px;
+  padding: 9px 12px 12px;
   font-weight: 500;
   background-color: #F2F2F2;
 }
@@ -137,12 +156,13 @@ body {
 .movie .btn-wrap .preview::before {
   content: '';
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url(../img/icon_play.png);
+  background-image: url("../img/icon_play.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  vertical-align: bottom;
+  width: 16px;
+  height: 16px;
   margin-right: 2px;
 }
 

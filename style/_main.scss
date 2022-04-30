@@ -1,13 +1,15 @@
 .container{
-    margin: 86px 65px 135px;
+    max-width: 1060px;
+    margin: 86px auto 135px;
     border: 2px solid $gray4 ;
     border-radius: 15px;
     padding: 39px 26px 29px;
     background-color: $gray6;
+    box-sizing: border-box;
 
     @at-root.header{
-        width: 650px;
-        margin: 0 auto;
+        max-width: 650px;
+        margin: 0 auto 28px;
         text-align: center;
         .tit{
             font-size: max($fontSizes...);
@@ -28,7 +30,8 @@
                 margin: 0 30px;
                 
             }
-            button.on{
+            button:hover{font-weight: 900;}
+            button.on{ 
                 color: #000;
                 font-weight: 900;
             }
@@ -56,6 +59,7 @@
                     font-weight: 900;
                     font-size: nth($fontSizes, 2);
                     margin: 11px 0 12px;
+                    @include ellipsis;
                 }
                 .info{
                     display: grid;
@@ -67,19 +71,13 @@
                     }
 
                     .txt.grade::before{
-                        content: '';
-                        display: inline-block;
+                        @include beforeAfter(inline-block, '../img/star.png',top);
                         width: 14px;
                         height: 14px;
-                        background-image: url(../img/star.png);
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
                         margin-right: 4px;
-                        
                     }
                     .txt.date, .txt.act{grid-column: 2/5;}
-                    
+                    .txt.act{@include ellipsis;}
                 }
                 .btn-wrap{
                     margin: 18px -19px 0;
@@ -88,7 +86,7 @@
                     .btn{
                         width: 50%;
                         box-sizing: border-box;
-                        padding: 9px 12px;
+                        padding: 9px 12px 12px;
                         font-weight: 500;
                         background-color: $gray6;
                     }
@@ -97,16 +95,10 @@
                     }
 
                     .preview::before{
-                        content: '';
-                        display: inline-block;
+                        @include beforeAfter(inline-block, '../img/icon_play.png',bottom);
                         width: 16px;
                         height: 16px;
-                        background-image: url(../img/icon_play.png);
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
                         margin-right: 2px;
-
                     }
                 }
 
