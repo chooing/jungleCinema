@@ -11,29 +11,32 @@
         max-width: 650px;
         margin: 0 auto 28px;
         text-align: center;
+
         .tit{
             font-size: max($fontSizes...);
             font-weight: 700;
+
+            &::after{
+                content: '';
+                display: block;
+                height: 2px;
+                background-color: $gray4;
+                margin: 37px auto 28px;
+            }
         }
-        .tit::after{
-            content: '';
-            display: block;
-            height: 2px;
-            background-color: $gray4;
-            margin: 37px auto 28px;
-        }
+
         .nav{
             font-size: nth($fontSizes, 2);
             color: $gray3;
             font-weight: 500;
+
             button{
                 margin: 0 30px;
-                
-            }
-            button:hover{font-weight: 900;}
-            button.on{ 
-                color: #000;
-                font-weight: 900;
+                &.on{
+                    color: #000;
+                    font-weight: 900;
+                }
+                &:hover{font-weight: 900;}
             }
         }
     }
@@ -55,12 +58,14 @@
                 border-radius: 10px;
                 padding: 18px 19px 0;
                 overflow: hidden;
+
                 .name{
                     font-weight: 900;
                     font-size: nth($fontSizes, 2);
                     margin: 11px 0 12px;
                     @include ellipsis;
                 }
+                
                 .info{
                     display: grid;
                     grid-template-columns: 0.8fr 78px 0.8fr 1.2fr;
@@ -70,28 +75,32 @@
                         color: $gray3;
                     }
 
-                    .txt.grade::before{
-                        @include beforeAfter(inline-block, '../img/star.png',top);
-                        width: 14px;
-                        height: 14px;
-                        margin-right: 4px;
+                    .txt{
+                        &.grade::before{
+                            @include beforeAfter(inline-block, '../img/star.png',top);
+                            width: 14px;
+                            height: 14px;
+                            margin-right: 4px;
+                        }
+
+                        &.date, &.act{grid-column: 2/5;}
+                        &.act{@include ellipsis;}
                     }
-                    .txt.date, .txt.act{grid-column: 2/5;}
-                    .txt.act{@include ellipsis;}
                 }
+
                 .btn-wrap{
                     margin: 18px -19px 0;
                     background-color: $gray6;
                     border-top: 1px solid $gray4;
+
                     .btn{
                         width: 50%;
                         box-sizing: border-box;
                         padding: 9px 12px 12px;
                         font-weight: 500;
                         background-color: $gray6;
-                    }
-                    .btn+.btn{
-                        border-left: 1px solid $gray4;
+
+                        &+.btn{ border-left: 1px solid $gray4; }
                     }
 
                     .preview::before{
@@ -101,11 +110,8 @@
                         margin-right: 2px;
                     }
                 }
-
             }
         }
-
-
     }
 }
 

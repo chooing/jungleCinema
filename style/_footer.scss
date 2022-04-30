@@ -8,6 +8,7 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
     .logo{
         display: inline-block;
         width: 147.5px;
+        
         a{
             display: block;
             width: 100%;
@@ -17,21 +18,21 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
 
     .sns-wrap{
         float: right;
-
-        @each $sns in $sns-images {
-            $i: index($sns-images, $sns);
+        a{
+            &+a{margin-left: 22px;}
             
-            a:nth-child(#{$i}){
-                display: inline-block;
-                width: 24px;
-                height: 24px; 
-                background-image: url($sns);
-                background-repeat: no-repeat;
-                background-size: contain;
-            } 
-        }
-        a+a{
-            margin-left: 22px;
+            @each $sns in $sns-images {
+                $i: index($sns-images, $sns);
+            
+                &:nth-child(#{$i}){
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px; 
+                    background-image: url($sns);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                } 
+            }
         }  
     }
 
@@ -48,26 +49,29 @@ $sns-images: "../img/twitter.png" "../img/instagram.png" "../img/facebook.png";
                 padding-left: 8px;
                 float: left;
             }
+            
             dd{
                 position: relative;
                 margin-left: 4px;
                 padding-right: 8px;
                 float: left;
-            }
-            dd::after{
-                content: '';
-                background-color: $gray2;
-                width: 1px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-            }
-            dd:last-child:after{
-                display: none;
-            }
-            
+
+                &::after{
+                    content: '';
+                    background-color: $gray2;
+                    width: 1px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;                    
+                }
+
+                &:last-child:after{
+                    display: none;
+                }
+            }            
         }
+
         .copy-right{
             float: right;
             font-weight: 700;
