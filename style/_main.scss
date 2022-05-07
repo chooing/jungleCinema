@@ -49,20 +49,35 @@
 
         .list-movie{
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap:24px 23px;
 
             @at-root .movie{
                 border: 1px solid #BDBDBD;
                 box-shadow: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
                 border-radius: 10px;
-                padding: 18px 19px 0;
+                padding: 279px 19px 60px;
                 overflow: hidden;
+                // padding-top: 250px;
+                position: relative;
+
+                .poster{
+                    width: 180px;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 18px;
+                    height: 250px;
+                    border: 1px solid #BDBDBD;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                }
 
                 .name{
                     font-weight: 900;
                     font-size: nth($fontSizes, 2);
-                    margin: 11px 0 12px;
+                    margin-top: 11px;
                     @include ellipsis;
                 }
                 
@@ -71,13 +86,15 @@
                     grid-template-columns: 0.8fr 78px 0.8fr 1.2fr;
                     gap: 5px 0;
                     font-size: min($fontSizes...);
+                    margin-top: 12px;
                     .tit{
                         color: $gray3;
                     }
 
                     .txt{
                         &.grade::before{
-                            @include beforeAfter(inline-block, '../img/star.png',top);
+                            @include beforeAfter(inline-block,top);
+                            @include btnBg('../img/star.png', 14px);
                             width: 14px;
                             height: 14px;
                             margin-right: 4px;
@@ -89,10 +106,14 @@
                 }
 
                 .btn-wrap{
-                    margin: 18px -19px 0;
+                    // margin: 18px -19px 0;
                     background-color: $gray6;
                     border-top: 1px solid $gray4;
-
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    
                     .btn{
                         width: 50%;
                         box-sizing: border-box;
@@ -104,7 +125,8 @@
                     }
 
                     .preview::before{
-                        @include beforeAfter(inline-block, '../img/icon_play.png',bottom);
+                        @include beforeAfter(inline-block, bottom);
+                        @include btnBg('../img/icon_play.png', 16px);
                         width: 16px;
                         height: 16px;
                         margin-right: 2px;
